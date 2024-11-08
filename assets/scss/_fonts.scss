@@ -1,0 +1,39 @@
+@use './variables' as v;
+@use './mixins/breakpoints' as b;
+
+h1,h2,h3,h4,h5,
+.h1,.h2,.h3,.h4,.h5 {
+    font-family: "El Messiri", sans-serif;
+
+    color: v.$dark-brown;
+}
+
+h1, .h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+    
+    
+    @include b.screen-size('md') {
+        
+        font-size: 7rem;
+        line-height: 8rem;
+    }
+}
+
+h2, .h2 {
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 800;
+}
+
+p, span, li, a {
+    font-family: "Roboto Flex", serif;
+    line-height: 1.8rem;
+
+    color: v.$dark-brown;
+}

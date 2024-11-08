@@ -1,0 +1,24 @@
+@use '../variables' as v;
+@use '../mixins/breakpoints' as b;
+
+
+a.btn {
+    color: v.$blanc-casse;
+    border: 2px v.$gold solid;
+    font-size: 1rem;
+    background-color: v.$gold;
+    display: block;
+    width: max-content;
+    
+    margin-top: 8px;
+    padding: 1rem 1.5rem;
+    
+    &:hover {
+        background-color: transparent;
+    }
+
+    @include b.screen-size('md') {
+
+        padding: 0.3rem 1rem;
+    }
+}

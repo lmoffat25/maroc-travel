@@ -1,0 +1,95 @@
+@use '../variables' as vars;
+@use '../mixins/breakpoints' as bp;
+
+$menu-height : 70px;
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: vars.$site-width;
+        height: $menu-height;
+        margin: auto;
+    }
+
+    background-color: vars.$blanc-casse;
+
+    &-logo {
+        height: calc(100% - 8px);
+        width: auto;
+    }
+
+    // La nav
+    &-navigation {
+        position: fixed;
+        top : $menu-height;
+        left: 0;
+
+        height:calc(100dvh - $menu-height);
+        width: 100%;
+
+        z-index: 1;
+        background-color: vars.$blanc-casse;
+
+        display: flex;
+        justify-content: center;
+        align-items: start;
+
+        display: none;
+
+        &.open {
+           display: block;
+        }
+
+        @include bp.screen-size('md') {
+            position: static;
+            display: block;
+            
+            width: auto;
+            height: auto;
+        }
+
+        &__toggle {
+
+            cursor: pointer;
+    
+            @include bp.screen-size('md') {
+                display: none;
+            }
+    
+        }
+
+        // Le ul
+        &__list {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            gap: 32px;
+
+            height: 100%;
+            margin-top: auto;
+            margin-bottom: auto;
+
+
+         @include bp.screen-size('md') {
+            flex-flow: row;
+         }
+    
+        }
+    
+    &__item a {
+        text-wrap: nowrap;
+    }
+    }
+
+
+
+}

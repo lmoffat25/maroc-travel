@@ -1,0 +1,54 @@
+@use '../variables' as v;
+@use '../mixins/breakpoints' as b;
+
+
+.double-img {
+
+    &__second > img {
+        margin-top: 2rem;
+    }
+
+    @include b.screen-size('md') {
+        display: flex;
+        flex-flow: column;
+
+        &__first, &__second {
+            display: flex;
+            flex-flow: row-reverse;
+            justify-content: start;
+            gap: 2rem;
+
+            & > h2 {
+                margin-top: 2rem;
+            }
+
+            & > img {
+                max-width: 50%;
+                height: 300px;
+                object-fit: cover;
+
+            }
+        }
+
+        &__second {
+            max-width: 75%;
+            margin-left: auto;
+
+            margin-top: -8rem;
+
+            & > div {
+                margin-top: 2rem;
+                max-width: 60%;
+            }
+
+            & > img {
+                height: 250px;
+            }
+        }
+
+
+        &__extra {
+            margin-top: 2rem;
+        }
+    }
+}

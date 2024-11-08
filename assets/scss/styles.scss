@@ -1,0 +1,17 @@
+@use "mixins/breakpoints";
+@use 'variables';
+
+@use 'fonts';
+@use 'base';
+@use 'utils';
+
+@use 'parts/menu';
+@use 'parts/btns';
+@use 'parts/hero';
+@use 'parts/double-img';
+@use 'parts/carousel-img';
+@use 'parts/card-grid';
+@use 'parts/six-grid';
+@use 'parts/faq';
+@use 'parts/img-left';
+@use 'parts/footer';
